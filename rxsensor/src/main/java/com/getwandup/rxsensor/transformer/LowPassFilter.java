@@ -1,7 +1,6 @@
 package com.getwandup.rxsensor.transformer;
 
 import com.getwandup.rxsensor.domain.RxSensorEvent;
-
 import rx.Observable;
 import rx.Observable.Transformer;
 import rx.functions.Func1;
@@ -15,7 +14,9 @@ import rx.functions.Func1;
  * Low Pass Filter to Android Sensor’s Readings</a>
  */
 public class LowPassFilter implements Transformer<RxSensorEvent, RxSensorEvent> {
+
     private final float factor;
+
     private float[] sensorValue;
 
     public LowPassFilter(float factor) {
@@ -24,24 +25,10 @@ public class LowPassFilter implements Transformer<RxSensorEvent, RxSensorEvent> 
 
     @Override
     public Observable<RxSensorEvent> call(Observable<RxSensorEvent> source) {
-        return source.map(new Func1<RxSensorEvent, RxSensorEvent>() {
-            @Override
-            public RxSensorEvent call(RxSensorEvent sensorEvent) {
-                sensorValue = lowPass(sensorEvent.values.clone(), sensorValue);
-                sensorEvent.values = sensorValue.clone();
-                return sensorEvent;
-            }
-        });
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     protected float[] lowPass(float[] current, float[] last) {
-        if (last == null) {
-            return current;
-        }
-
-        for (int i = 0; i < current.length; i++) {
-            last[i] = last[i] + factor * (current[i] - last[i]);
-        }
-        return last;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

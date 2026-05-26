@@ -2,7 +2,6 @@ package com.getwandup.rxsensor.domain;
 
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
-
 import java.util.Arrays;
 
 /**
@@ -12,9 +11,13 @@ import java.util.Arrays;
  * @author TomeOkin
  */
 public class RxSensorEvent {
+
     public float[] values;
+
     public Sensor sensor;
+
     public int accuracy;
+
     public long timestamp;
 
     public RxSensorEvent(float[] values, Sensor sensor, int accuracy, long timestamp) {
@@ -25,21 +28,11 @@ public class RxSensorEvent {
     }
 
     public static RxSensorEvent from(SensorEvent sensorEvent) {
-        return new RxSensorEvent(sensorEvent.values, sensorEvent.sensor, sensorEvent.accuracy,
-                sensorEvent.timestamp);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public String toString() {
-        return "RxSensorEvent{"
-                + "values="
-                + Arrays.toString(values)
-                + ", sensor="
-                + sensor
-                + ", accuracy="
-                + accuracy
-                + ", timestamp="
-                + timestamp
-                + '}';
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

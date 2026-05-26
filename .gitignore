@@ -34,3 +34,8 @@ target
 Thumbs.db
 *.swp
 *.bak
+
+.aider*
+logs/
+.commit0_scripts/
+.github/workflows/
